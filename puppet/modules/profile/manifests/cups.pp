@@ -15,7 +15,7 @@ class profile::cups {
     source => 'puppet:///modules/profile/cupsd.conf',
     require => Class['cups'],
   }
-  cups_queue { 'Brother HL-L2320D series':
+  cups_queue { 'Brother_HL-L2320D_series':
     ensure => 'printer',
     model  => 'drv:///sample.drv/generpcl.ppd',
     make_and_model => 'Brother HL-L2320D series',
