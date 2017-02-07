@@ -1,0 +1,5 @@
+---
+puppet_modules:
+  - puppetlabs-apt
+  - puppetlabs-stdlib
+  - saz-locales
