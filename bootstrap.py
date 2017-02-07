@@ -3,9 +3,13 @@ import subprocess
 
 cwd = os.getcwd()
 
-print('Updating apt and installing puppet dependencies...')
-subprocess.call('apt-get update && apt-get install vim rub-full facter hiera bundler -y', shell=True)
+print('Updating apt and installing dependencies...')
+subprocess.call('sudo apt-get update && apt-get install vim ruby-full facter hiera bundler python-pip -y', shell=True)
 
+print('Installing python dependencies...')
+subprocess.call('sudo pip install pyyaml')
+
+#switch to urllib?
 print('Downloading puppet 4.9.1 agent...')
 subprocess.call('wget -O {}/4.9.1.zip https://github.com/puppetlabs/puppet/archive/4.9.1.zip'.format(cwd), shell=True)
 
