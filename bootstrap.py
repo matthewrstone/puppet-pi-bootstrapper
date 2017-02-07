@@ -1,6 +1,16 @@
 import os
 import subprocess
+import sys
 
+args = sys.argv
+puppet_role = None
+modules = []
+with open('resources.yaml', 'r') as y:
+    resources = yaml.load(y)
+    for role in resources[roles]:
+        if args[1] == role
+        puppet_role = role
+        
 cwd = os.getcwd()
 
 print('Updating apt and installing dependencies...')
