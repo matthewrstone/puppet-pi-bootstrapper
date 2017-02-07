@@ -22,7 +22,7 @@ class profile::airprint {
   exec { 'generate_airprint_config' : 
     command     => 'sudo ./airprint-generate.py -d /etc/avahi/services',
     refreshonly => true,
-    notify      => Service['avahi'],
+    notify      => Class['avahi'],
   }
 
 }

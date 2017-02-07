@@ -10,10 +10,6 @@ class profile::cups {
     gid      => '20',
     groups   => 'lpadmin',
   }
-  service { 'cups' :
-    ensure  => running,
-    require => [User['printadmin'], Class['cups']],
-  }
   file { '/etc/cups/cupsd.conf' :
     ensure  => file,
     source => 'puppet:///modules/profile/cupsd.conf',
