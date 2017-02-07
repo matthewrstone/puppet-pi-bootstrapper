@@ -20,7 +20,7 @@ class profile::airprint {
     provider => git,
   }
   exec { 'generate_airprint_config' : 
-    command     => 'sudo ./airprint-generate.py -d /etc/avahi/services',
+    command     => '/home/pi/airprint-generate/airprint-generate.py -d /etc/avahi/services',
     refreshonly => true,
     notify      => Class['avahi'],
   }
