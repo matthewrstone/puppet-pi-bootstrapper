@@ -1,3 +1,8 @@
+# These packages were mentioned in the walkthrough but not found in apt:
+#        'gutenprint',
+#        'pycups',
+#        'avahi',
+#        'python2',
 class profile::airprint {
     $packages = [
         'avahi-daemon',
@@ -5,10 +10,6 @@ class profile::airprint {
         'libnss-mdns',
         'cups',
         'cups-pdf',
-        'gutenprint',
-        'pycups',
-        'avahi',
-        'python2',
         'python-cups',
     ]
     package { $packages : ensure => installed }
@@ -32,6 +33,6 @@ class profile::airprint {
     }
     file { '/etc/cups/cupsd.conf' :
         ensure  => file,
-        content => file("puppet:///${module_name}/files/cupsd.conf"),
+        content => 'puppet:///modules/profile/cupsd.conf',
     }
 }

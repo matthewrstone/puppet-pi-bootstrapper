@@ -18,3 +18,6 @@ subprocess.call('{}/unzip 4.9.1.zip && cd puppet-4.9.1 && bundle install --path 
 
 print('Using python to call a shell to call ruby to install puppet...')
 subprocess.call('ruby {}/puppet-4.9.1/install.rb'.format(cwd), shell=True)
+
+print('Setting basemodulepath...')
+subprocess.call('sudo puppet config set basemodulepath /home/pi/puppet-pi-bootstrapper/puppet/modules:/opt/puppetlabs/puppet/modules', shell=True)
