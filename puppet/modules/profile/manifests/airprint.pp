@@ -15,7 +15,7 @@ class profile::airprint {
     user { 'printadmin':
         comment  => 'Printer Admin',
         home     => '/home/printadmin',
-        password => '1547428edb9d83387b29239aac651a28a4493b39',
+        password => '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8',
         ensure   => present,
         shell    => '/bin/bash',
         uid      => '501',
