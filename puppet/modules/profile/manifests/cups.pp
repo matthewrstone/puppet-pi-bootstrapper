@@ -9,7 +9,7 @@ class profile::cups {
     uid      => '501',
     gid      => '20',
     groups   => 'lpadmin',
-  }
+  }  
   file { '/etc/cups/cupsd.conf' :
     ensure  => file,
     source => 'puppet:///modules/profile/cupsd.conf',
@@ -18,7 +18,7 @@ class profile::cups {
   cups_queue { 'Brother_HL-L2320D_series':
     ensure => 'printer',
     model  => 'drv:///sample.drv/generpcl.ppd',
-    make_and_model => 'Brother HL-L2320D series',
+    make_and_model => 'Generic PCL Laser Printer',
     require        => Class['cups'],
  }
 }

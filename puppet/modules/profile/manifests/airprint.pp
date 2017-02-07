@@ -22,6 +22,7 @@ class profile::airprint {
   exec { 'generate_airprint_config' : 
     command     => '/home/pi/airprint-generate/airprint-generate.py -d /etc/avahi/services',
     refreshonly => true,
+    creates     => '/etc/ahavi/services/AirPrint-Brother_HL-L2320D_series.service',
     notify      => Class['avahi'],
   }
 
