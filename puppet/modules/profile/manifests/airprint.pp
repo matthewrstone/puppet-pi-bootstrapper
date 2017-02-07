@@ -24,11 +24,11 @@ class profile::airprint {
     }
     service { 'cups' :
         ensure  => running,
-        require => Package[$packages]
+        require => Package[$packages],
     }
     service { 'avahi-daemon' :
         ensure  => running,
-        require => Package[$packages]
+        require => Package[$packages],
     }
     file_line { 'cups port':
         ensure => present,
@@ -40,15 +40,15 @@ class profile::airprint {
     file_line { 'cups serveralias':
         ensure => present,
         path   => '/etc/cups/cupsd.config',
-        line   => 'ServerAlias *'
-        after  => '^DefaultAuthType Basic$'
-        before => Service['cups']
+        line   => 'ServerAlias *',
+        after  => '^DefaultAuthType Basic$',
+        before => Service['cups'],
     }
     file_line { 'cups order':
         ensure => present,
         path   => '/etc/cups/cupsd.config',
-        line   => 'Allow @Local'
-        after  => '^  Order allow,deny$'
-        before => Service['cups']
+        line   => 'Allow @Local',
+        after  => '^  Order allow,deny$',
+        before => Service['cups'],
     }
 }
