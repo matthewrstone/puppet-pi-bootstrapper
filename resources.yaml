@@ -1,0 +1,8 @@
+---
+puppet_modules:
+  - puppetlabs-apt
+  - puppetlabs-stdlib
+  - saz-locales
+  - leoarnold-cups
+  - maestrodev-avahi
+  - puppetlabs-vcsrepo
