@@ -32,6 +32,6 @@ class profile::airprint {
     }
     file { '/etc/cups/cupsd.conf' :
         ensure  => file,
-        content => file("puppet:///${module_name}/cupsd.conf"),
+        content => file("puppet:///${module_name}/files/cupsd.conf"),
     }
 }
