@@ -3,7 +3,7 @@ import os
 import subprocess
 
 cwd = os.getcwd()
-modpath = '{}/modules'
+modpath = '{}/puppet/modules'
 with open('{}/resources/airprint.yaml'.format(cwd)) as y:
     mod = yaml.load(y)
     for module in mod['puppet_modules']:
