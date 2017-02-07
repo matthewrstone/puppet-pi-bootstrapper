@@ -13,9 +13,16 @@ class profile::airprint {
 #        'python-cups',
 #    ]
 #    package { $packages : ensure => installed }
+  contain profile::avahi
   vcsrepo { '/home/pi/airprint-generate' :
     ensure   => present,
     source   => 'https://github.com/tjfontaine/airprint-generate.git',
     provider => git,
   }
+  exec { 'generate_airprint_config' : 
+    command     => 'sudo ./airprint-generate.py -d /etc/avahi/services',
+    refreshonly => true,
+    notify      => Service['avahi'],
+  }
+
 }
