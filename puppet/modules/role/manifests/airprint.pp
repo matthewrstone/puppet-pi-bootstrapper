@@ -8,5 +8,7 @@
 # echo -n "password" | openssl sha1
 class role::airprint {
     include profile::base
+    include profile::avahi
+    include profile::cups
     include profile::airprint
 }
