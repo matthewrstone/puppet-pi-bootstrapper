@@ -16,9 +16,10 @@ class profile::cups {
     notify => Class['cups'],
   }
   cups_queue { 'Brother_HL-L2320D_series':
-    ensure => 'printer',
-    model  => 'drv:///sample.drv/generpcl.ppd',
+    ensure         => 'printer',
+    model          => 'drv:///sample.drv/generpcl.ppd',
     make_and_model => 'Generic PCL Laser Printer',
+    shared         => true,
     require        => Class['cups'],
  }
 }
