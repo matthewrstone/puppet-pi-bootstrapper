@@ -11,9 +11,9 @@ class profile::cups {
     groups   => 'lpadmin',
   }  
   file { '/etc/cups/cupsd.conf' :
-    ensure  => file,
+    ensure => file,
     source => 'puppet:///modules/profile/cupsd.conf',
-    require => Class['cups'],
+    notify => Class['cups'],
   }
   cups_queue { 'Brother_HL-L2320D_series':
     ensure => 'printer',
