@@ -18,5 +18,6 @@ class profile::base {
   package { $packages :
     ensure => installed,
   }
+  service { 'sshd' : enable => true }
 
 }
